@@ -1,0 +1,583 @@
+html{
+    font-family: 'Work Sans', sans-serif;
+    flex-direction:column;
+    background:#8e8367;
+    text-align:center;
+}
+
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+ul{
+    list-style:none;
+}
+
+a{
+    text-decoration:none;
+    color:black;
+}
+
+.loader {
+    position:fixed;
+    top:calc(50% - 25px);
+    right:calc(50% - 25px);
+    border: 5px solid hsl(0, 0%, 95%);
+    border-top: 5px solid #b30000;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+    -webkit-animation:spin 2s linear infinite;
+    -ms-animation:spin 2s linear infinite;
+    -moz-animation:spin 2s linear infinite;
+    -o-animation:spin 2s linear infinite;
+    z-index:20;
+  }
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+
+header{
+    z-index:10;
+    background:white;
+    position: sticky;
+    top:0;
+    height:6rem;
+    display:flex;
+}
+
+header a{
+    color:black;
+    font-weight:bold;
+}
+
+.header-container{
+    margin:0 auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:95%;
+}
+
+#menu-desp, .menu>ul>li:first-child, .menu>ul>li:last-child{
+    display:none;
+}
+
+.menu>ul{
+    display:flex;
+}
+
+.menu>ul>li{
+    padding:1rem;
+}
+
+.menu ul li a:hover{
+    font-weight: bold;
+    color:#b30000;
+}
+
+.menu-titulo{
+    background:rgba(0,0,0,0.5);
+    color:white;
+}
+
+.active{
+    padding-bottom:0.5rem;
+    border-bottom:solid 3px #b30000;
+}
+
+h2,h3{
+    text-align:center;
+    font-weight:bold;
+    max-width:90%;
+    margin: 1.5rem auto;
+}
+
+.logo{
+    width:120px;
+    height:60px;
+}
+
+#carrito{
+    z-index:5;
+    background:white;
+    width:3.5rem;
+    height:3.5rem;
+    position:fixed;
+    right:1rem;
+    top:7rem;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    border-radius:360%;
+    font-size:1.8rem;
+}
+
+#carrito:hover{
+    transform:scale(1.1);
+}
+
+.cuerpo{
+    text-align:justify;
+    font-size:1.2rem;
+    margin: 2rem auto;
+    width:95%;
+}
+
+.main-header{
+    background: #222;
+    color:white;
+    letter-spacing:1px;
+    height:6rem;
+    display:flex;
+    align-items:center;
+    padding-right:2rem;
+}
+
+.home{
+    position:relative;
+    display:flex;
+
+}
+
+.home img{
+    width:100%;
+}
+
+.home h4{
+    text-align:left;
+    position: absolute;
+    left:3%;
+    top:15%;
+    color:rgb(94, 88, 88);
+    font-size:3rem;
+}
+
+.reserva{
+    width:45%;
+    border:none;
+    font-weight:bold;
+}
+
+.reserva form{
+    text-align:left;
+    margin:5% 10% 5% 15%;
+}
+
+.reserva form input:not([type="submit"]){
+    font-weight:normal;
+    font-size:1.2rem;
+    padding:0.6rem;
+    height:1.8rem;
+    width:100%;
+    border:none;
+    background:#dbd9c4;
+}
+
+.reserva form input[type="submit"]{
+    font-weight:normal;
+    letter-spacing:0.1rem;
+    font-size:1.2rem;
+    width:100%;
+    border-radius:0px;
+    cursor:pointer;
+}
+
+.reserva form input:focus{
+    outline:none;
+}
+
+#cuenta{
+    width:40%;
+    letter-spacing:1px;
+    background:#dbd9c4;
+    font-size:1.2rem;
+    padding:1.5rem;
+    margin:1rem auto;
+    border-radius:7px;
+}
+
+.cuenta{
+    padding:0.3rem;
+    text-align:right;
+    margin:0 auto;
+}
+
+#cuenta button{
+    font-size:1.5rem;
+    cursor:pointer;
+    border:none;
+    margin:0.3rem;
+    padding:0.5rem;
+    height:2.5rem;
+    background:#b30000;
+    border-radius:7px;
+    color:white;
+    outline:none;
+}
+
+#cuenta a{
+    font-size:1.5rem;
+    color:white;
+}
+
+.products{
+    width:90%;
+    display:inline-grid;
+    grid-template-columns: 30% 30% 30%;
+    gap:20px;
+    justify-content: space-around;
+    padding-bottom:40px;
+}
+
+.product{
+    background:white;
+    position:relative;
+    border-radius:7px;
+    font-weight:bold;
+}
+
+.product p{
+    font-weight:bold;
+}
+
+.product img{
+    border-radius:7px 7px 0 0;
+    width:100%;
+}
+
+.order{
+    cursor:pointer;
+    color:white;
+    text-align:center;
+    background:#b30000;
+    height: 2.5rem;
+    font-weight:bold;
+    border-radius:0 7px 7px 0;
+    width:50%;
+    margin:0.5rem auto;
+    border:none;
+    outline:none;
+}
+
+.cantidad{
+    height:2.5rem;
+    background:#ddd;
+    width:2.5rem;
+    border-radius: 7px 0 0 7px;
+    text-align:center;
+    font-weight:bold;
+    border:solid gray 1px;
+    outline:none;
+}
+
+.contacto{
+    margin: 0 auto;
+    display:flex;
+}
+
+.map{
+    width:55%;
+}
+
+.map iframe{
+    width:100%;
+    height:100%;
+    min-height:30rem;
+    filter:grayscale(100)
+}
+
+.cumpleaños{
+    width:75%;
+    height:25rem;
+    margin: 2rem auto;
+    background-image:url("../img/cumpleanos.jpg");
+    background-size: cover;
+}
+
+.cuadroTexto{
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index:20;
+    background:rgba(0,0,0,0.8);
+}
+
+.cuadro{
+    overflow:hidden;
+    color:black;
+    position:fixed;
+    height:50%;
+    width:50%;
+    left:calc(25%);
+    top:calc(25%);
+    background:#c4c0ba;
+    display:flex;
+}
+
+.cuadro div:last-child{
+    margin: auto 1rem;
+}
+
+.cuadro div p{
+    font-size:1.2rem;
+    text-align:center;
+    top:40%;
+    right:0;
+    left:0;
+}
+
+.cuadro div h2{
+    color:#b30000;
+}
+
+.cuadro img{
+    max-width:50%;
+}
+
+.cerrarCuadro{
+    position:absolute;
+    top:2%;
+    right:2%;
+    padding:5px;
+    cursor:pointer;
+}
+
+.cerrarCuadro:hover{
+    transform:scale(1.2);
+    color:#b30000;
+}
+
+footer{
+    color:white;
+    bottom:0;
+    width:100%;
+    background:#111;
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+}
+.footercontainer{
+    margin:3rem auto;
+    width:95%;
+}
+
+.footercontainer h4{
+    font-weight: normal;
+    font-size: 1rem;
+    margin-top:0.8rem;
+}
+
+.footercontainer form{
+    width:100%;
+    margin:0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footercontainer form input{
+    border:solid 2px white; 
+    background:#dbd9c4;
+    text-align: center;
+    padding:0.5rem;
+    border:none;
+    height:2rem;
+    min-width:22rem;
+    width: 30%;
+    font-size: 1rem;
+}
+
+.footercontainer form input[type="submit"]{
+    font-weight:bold;
+    cursor:pointer;
+    background:#8e8367;
+    letter-spacing:0.1rem;
+}
+
+.footercontainer form input:focus{
+    outline:none;
+}
+
+.confirma{
+    font-weight:normal;
+    background:rgba(79,126,31,0.8);
+    margin-top:0.5rem;
+    color:white;
+    width:100%;
+    text-align:center;
+    padding:0.5rem;
+}
+
+.footercontainer p{
+    font-family: 'Work Sans', sans-serif;
+    font-weight:normal;
+    font-size:0.8rem;
+}
+
+.footercontainer a{
+    color:white;
+    margin:0;
+    padding:1rem;
+}
+
+.redes{
+    padding:0.5rem;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.footercontainer a:hover{
+    color:#AAA
+}
+
+.icon{
+    font-size:1.7rem;
+}
+
+
+
+@media screen and (max-width:1100px){
+    .products{
+        grid-template-columns: 50% 50%;
+        grid-gap:20px;
+    }
+
+    .cumpleaños{
+        width:90%;
+        height:20rem;
+    }
+
+    .home h4{
+        font-size:1.5rem;
+    }
+
+    #cuenta{
+        width:40%;
+    }
+}
+
+@media screen and (max-width:720px){
+
+    .main-header{
+        padding-right:4rem;
+        font-size:0.8rem;
+    }
+
+    .header-container{
+        width:90%;
+        justify-content: space-between;
+        margin:0 auto;
+    }
+
+    #menu-desp, .menu>ul>li:first-child,.menu>ul>li:last-child {
+        display:block;
+    }
+
+    .menu{
+        position:fixed;
+        overflow:hidden;
+        background:rgba(0,0,0,0.85);
+        padding:0rem 2rem;
+        width:50%;
+        height:180vh;
+        margin-top:2.18rem;
+        right:0;
+        transition: height 0.9s ease;
+        -ms-animation:height 0.9s ease;
+        -webkit-animation:height 0.9s ease;
+        -moz-animation:height 0.9s ease;
+        -o-animation:height 0.9s ease;
+    }
+
+    .cerrarMenu{
+        height:0%;
+    }
+
+    .menu>ul{
+        display: flex;
+        flex-direction: column;
+        gap:1rem;
+        justify-content: space-between;
+        align-items:center;
+        padding:1rem;
+    }
+
+    .menu ul li a, .menu ul li{
+        color:white;
+        font-weight:normal;
+        padding:0.5rem;
+    }
+
+    .cuerpo{
+        width:85%;
+        font-size:1rem;
+    }
+
+    .products{
+        grid-template-columns: 90%;
+        grid-gap:30px;
+    }
+
+    .cuadro div:last-child{
+        transform:scale(0.8);
+    }
+
+    .contacto{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .reserva{
+        margin:0;
+        width:95%;
+        padding:0;
+    }
+
+    .map{
+        width:100%;
+    }
+
+    .footercontainer{
+        width:90%;
+    }
+
+    h3{
+        font-size:0.9rem;
+    }
+
+    .suscribite form input{
+        font-size:0.8rem;
+    }
+
+    .cuadro{
+        height:50%;
+        width:80%;
+        left:calc(10%);
+        top:calc(25%);
+    }
+
+    .novedades{
+        height:30rem;
+        font-size:2rem;
+    }
+
+    .cumpleaños{
+        width:90%;
+        height:10rem;
+    }
+    
+    #cuenta{
+        width:60%;
+        font-size:1rem;
+    }
+}

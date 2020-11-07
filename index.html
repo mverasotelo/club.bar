@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Bar</title>
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Solway:wght@700&family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d71332221e.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body id="body">
+    <div v-show="show" id="loader" class="loader"></div>
+    <header>
+        <ul class="header-container">
+            <li><a href=index.html><img class=logo src="img/logo.png"></a></li>
+            <li id="menu"><a @click="desplegarMenu" id="menu-desp" href="#" :class="iconoMenu"></a>
+                <nav class="menu" :class="desplegar">
+                    <ul>
+                        <li><br><a class="active" href=index.html>HOME</a></li>
+                        <li><a href=nosotros.html>NOSOTROS</a></li>
+                        <li><a href=menu.html>MENU</a></li>
+                        <li><a href=reservas.html>RESERVAS</a></li>
+                        <li><a href=eventos.html>EVENTOS</a></li>
+                        <li><ul class="redes">
+                            <li><a href="https://www.facebook.com/" target=_blank class="fab fa-facebook-square icon"> </a></li>
+                            <li><a href="https://www.instagram.com/" target=_blank  class="fab fa-instagram icon"></a></li>
+                        </ul></li>
+                    </ul>
+                </nav>
+            </li>
+        </ul>
+    </header>
+    <main id="main">
+        <div class="container home">
+            <img src="img/home0.jpg" alt="#quedateencasa">
+                <h4>#QUEDATEENCASA<br>Y hacé tu pedido en Club Bar</h4>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footercontainer">
+            <form id="suscripcion" @submit.prevent="confirmarSuscripcion()">
+                <input v-model="eMail" type="email" placeholder="Tu e-mail" required>
+                <input type="submit" value="SUSCRIBIRME">
+                <h4 :class="clase" v-text="confirmacion"><h4>
+            </form>
+            <ul class="redes">
+                <li><a href="https://www.facebook.com/" target=_blank class="fab fa-facebook-square icon"></a></li>
+                <li><a href="https://twitter.com/" target=_blank class="fab fa-twitter icon"></a></li>
+                <li><a href="https://www.instagram.com/" target=_blank  class="fab fa-instagram icon"></a></li>
+            </ul>
+            <p class="copy">© Copyright - 2017 - 2020 www.clubbar.com.ar - TODOS LOS DERECHOS RESERVADOS.</p>
+        </div>
+    </footer>
+</body>
+<script src="js/vue.js"></script>
+</html>

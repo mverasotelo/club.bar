@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Bar</title>
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Solway:wght@700&family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d71332221e.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body id="body">
+    <div v-show="show" id="loader" class="loader"></div>
+    <header>
+        <ul class="header-container">
+            <li><a href=index.html><img class=logo src="img/logo.png"></a></li>
+            <li id="menu"><a @click="desplegarMenu" id="menu-desp" href="#" :class="iconoMenu"></a>
+                <nav class="menu" :class="desplegar">
+                    <ul>
+                        <li><br><a href=index.html>HOME</a></li>
+                        <li><a class="active" href=nosotros.html>NOSOTROS</a></li>
+                        <li><a href=menu.html>MENU</a></li>
+                        <li><a href=reservas.html>RESERVAS</a></li>
+                        <li><a href=eventos.html>EVENTOS</a></li>
+                        <li><ul class="redes">
+                            <li><a href="https://www.facebook.com/" target=_blank class="fab fa-facebook-square icon"> </a></li>
+                            <li><a href="https://www.instagram.com/" target=_blank  class="fab fa-instagram icon"></a></li>
+                        </ul></li>
+                    </ul>
+                </nav>
+            </li>
+        </ul>
+    </header>
+    <main id="main">
+        <div class="menu-productos main-header">
+            <h3>NUESTRA HISTORIA</h3>
+        </div>
+        <div class="cuerpo"><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum doloremque iusto cum cumque quibusdam, dolore commodi vitae! Recusandae eaque laboriosam voluptates, provident eum a, quisquam rerum blanditiis itaque harum quae.</p>
+        <p>Eius hic est magnam explicabo nostrum repellat odio. Cum perferendis, ut ad culpa dolorem libero, doloremque vel commodi doloribus odit beatae corrupti provident eos esse ex hic. Veniam, ex repudiandae.</p>
+        <p>Mollitia amet perferendis, autem rerum odio tenetur dolore id corporis iure dicta ratione pariatur, quos distinctio sit dolor ea consequatur vel veritatis non, accusantium ex debitis! Quam assumenda ad aspernatur!</p>
+        <p>Officia vel maxime nostrum dolor eius quos quidem magnam reiciendis? Quam, ducimus impedit! Nobis delectus saepe consequuntur. Culpa libero atque sit, qui reiciendis optio, excepturi voluptatibus eius facilis est dolor.</p>
+        <p>Corporis enim, adipisci, sapiente illum officiis rerum minima dolore cumque et pariatur quas veritatis! Deserunt exercitationem illum aperiam tempora? Sapiente rerum minima magnam cumque sunt quia, atque nemo ut. Veniam?</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum doloremque iusto cum cumque quibusdam, dolore commodi vitae! Recusandae eaque laboriosam voluptates, provident eum a, quisquam rerum blanditiis itaque harum quae.</p>
+        <p>Eius hic est magnam explicabo nostrum repellat odio. Cum perferendis, ut ad culpa dolorem libero, doloremque vel commodi doloribus odit beatae corrupti provident eos esse ex hic. Veniam, ex repudiandae.</p></div>
+    </main>
+    <footer>
+        <div class="footercontainer">
+            <form id="suscripcion" @submit.prevent="confirmarSuscripcion()">
+                <input v-model="eMail" type="email" placeholder="Tu e-mail" required>
+                <input type="submit" value="SUSCRIBIRME">
+                <h4 :class="clase" v-text="confirmacion"><h4>
+            </form>
+            <ul class="redes">
+                <li><a href="https://www.facebook.com/" target=_blank class="fab fa-facebook-square icon"></a></li>
+                <li><a href="https://twitter.com/" target=_blank class="fab fa-twitter icon"></a></li>
+                <li><a href="https://www.instagram.com/" target=_blank  class="fab fa-instagram icon"></a></li>
+            </ul>
+            <p class="copy">© Copyright - 2017 - 2020 www.clubbar.com.ar - TODOS LOS DERECHOS RESERVADOS.</p>
+        </div>
+    </footer>
+</body>
+<script src="js/vue.js"></script>
+</html>

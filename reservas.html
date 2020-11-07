@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Bar</title>
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Solway:wght@700&family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d71332221e.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body id="body">
+    <div v-show="show" id="loader" class="loader"></div>
+    <header>
+        <ul class="header-container">
+            <li><a href=index.html><img class=logo src="img/logo.png"></a></li>
+            <li id="menu"><a @click="desplegarMenu" id="menu-desp" href="#" :class="iconoMenu"></a>
+                <nav class="menu" :class="desplegar">
+                    <ul>
+                        <li><br><a href=index.html>HOME</a></li>
+                        <li><a href=nosotros.html>NOSOTROS</a></li>
+                        <li><a href=menu.html>MENU</a></li>
+                        <li><a class="active" href=reservas.html>RESERVAS</a></li>
+                        <li><a href=eventos.html>EVENTOS</a></li>
+                        <li><ul class="redes">
+                            <li><a href="https://www.facebook.com/" target=_blank class="fab fa-facebook-square icon"> </a></li>
+                            <li><a href="https://www.instagram.com/" target=_blank  class="fab fa-instagram icon"></a></li>
+                        </ul></li>
+                    </ul>
+                </nav>
+            </li>
+        </ul>
+    </header>
+    <main id="main">
+        <div class="contacto">
+            <section class="reserva">
+                 <form id="reservar" @submit.prevent="confirmarReserva()">
+                    <label>NOMBRE<br>
+                        <input v-model="nombre" type="text" name="name" id="name" required>
+                    </label><br><br>
+                    <label>EMAIL<br>
+                        <input v-model="email" type="email"  required>
+                    </label><br><br>
+                    <label>TELEFONO<br>
+                        <input v-model="tel" type="tel" minlength="8" required>
+                    </label><br><br>
+                    <label>PERSONAS<br>
+                    <input v-model="personas" type="number" min="1" max="10" required>
+                    </label><br><br>
+                    <label>FECHA<br>
+                    <input v-model="fecha" type="date" required>
+                    </label><br><br>
+                    <label>HORA<br>
+                    <input v-model="hora" type="time" min="11:00" max="23:00" step=1200 required>
+                    </label><br><br>
+                    <input class="order" type="submit" value="RESERVAR">
+                    <div v-show="confirmado" class="cuadroTexto">
+                        <div class="cuadro" @click="cerrarCuadro()">
+                            <div class="cerrarCuadro icon fas fa-times" @click="cerrarCuadro()" tabindex="0"></div>
+                            <img src="img/restaurante.jpg" alt="Reserva confirmada">
+                            <div><h2>Te esperamos, {{nombre}}!</h2><p>Te enviamos la confirmación de la reserva a<br>{{email}}</p></div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <section class="map">
+                <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.9045494433135!2d-58.392216284770385!3d-34.60657508045864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac396fc1709%3A0x5eca3eb25c4c0345!2sPres.%20Tte.%20Gral.%20Juan%20Domingo%20Per%C3%B3n%201651%2C%20C1037%20ACE%2C%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1599697380501!5m2!1ses-419!2sar" align="middle" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="footercontainer">
+            <form id="suscripcion" @submit.prevent="confirmarSuscripcion()">
+                <input v-model="eMail" type="email" placeholder="Tu e-mail" required>
+                <input type="submit" value="SUSCRIBIRME">
+                <h4 :class="clase" v-text="confirmacion"><h4>
+            </form>
+            <ul class="redes">
+                <li><a href="https://www.facebook.com/" target=_blank class="fab fa-facebook-square icon"></a></li>
+                <li><a href="https://twitter.com/" target=_blank class="fab fa-twitter icon"></a></li>
+                <li><a href="https://www.instagram.com/" target=_blank  class="fab fa-instagram icon"></a></li>
+            </ul>
+            <p class="copy">© Copyright - 2017 - 2020 www.clubbar.com.ar - TODOS LOS DERECHOS RESERVADOS.</p>
+        </div>
+    </footer>
+</body>
+<script src="js/vue.js"></script>
+</html>
