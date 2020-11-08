@@ -5,8 +5,8 @@ const enviarPedido=document.querySelector("#enviarPedido");
 const agrega = document.querySelectorAll(".agrega");
 const whatsapp=enviarPedido.firstChild;
 let lista=[];
-let subtotal=0;
-elemSubtotal.innerHTML="TOTAL: $"+subtotal;
+let subtotal;
+elemSubtotal.innerHTML="TOTAL: $0";
 
 
 for(i=0;i<agrega.length;i++){
@@ -21,16 +21,17 @@ function agregaProducto(event){
     event.preventDefault();
     let cantidad=event.target.querySelector(".cantidad").value;
     let precio=event.target.querySelector(".precio").innerHTML;
+    subtotal=0;
     if(cantidad=>1&&cantidad<=10){
         let precioProducto=Number(precio.substr(1))*cantidad;
         lista.push(Number(precioProducto));
         for(let a=0;a<lista.length;a++){
              subtotal+=lista[a];
         }
-        elemSubtotal.previousElementSibling.innerHTML=elemSubtotal.previousElementSibling.innerHTML+event.target.querySelector(".producto").innerHTML+" (x"+cantidad+") ---- $"+ precioProducto+"<br>";
+    elemSubtotal.previousElementSibling.innerHTML=elemSubtotal.previousElementSibling.innerHTML+event.target.querySelector(".producto").innerHTML+" (x"+cantidad+") ---- $"+ precioProducto+"<br>";
     }
-    elemSubtotal.innerHTML="<hr>TOTAL: $"+subtotal;
-    event.target.querySelector(".cantidad").value="";
+elemSubtotal.innerHTML="<hr>TOTAL: $"+subtotal;
+event.target.querySelector(".cantidad").value="";
 }
 
 function borrarLista(){
