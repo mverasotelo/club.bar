@@ -4,10 +4,10 @@ const borrarTodo=document.querySelector("#borrarTodo");
 const enviarPedido=document.querySelector("#enviarPedido");
 const agrega = document.querySelectorAll(".agrega");
 const whatsapp=enviarPedido.firstChild;
-elemSubtotal.innerHTML="Subtotal: $0";
 let lista=[];
-let subtotal;
-let mensaje="";
+let subtotal=0;
+elemSubtotal.innerHTML="TOTAL: $"+subtotal;
+
 
 for(i=0;i<agrega.length;i++){
     agrega[i].addEventListener("submit", agregaProducto);
@@ -21,7 +21,6 @@ function agregaProducto(event){
     event.preventDefault();
     let cantidad=event.target.querySelector(".cantidad").value;
     let precio=event.target.querySelector(".precio").innerHTML;
-    subtotal=0;
     if(cantidad=>1&&cantidad<=10){
         let precioProducto=Number(precio.substr(1))*cantidad;
         lista.push(Number(precioProducto));
@@ -36,8 +35,8 @@ function agregaProducto(event){
 
 function borrarLista(){
     elemSubtotal.previousElementSibling.innerHTML="";
-    elemSubtotal.innerHTML="TOTAL: $0";
     lista=[];
+    elemSubtotal.innerHTML="TOTAL: $0";
 }
 
 function enviaPedido(){

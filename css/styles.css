@@ -117,6 +117,7 @@ h2,h3{
     justify-content: center;
     border-radius:360%;
     font-size:1.8rem;
+    border: 3px solid #b30000;
 }
 
 #carrito:hover{
@@ -198,7 +199,6 @@ h2,h3{
     letter-spacing:1px;
     background:#dbd9c4;
     font-size:1.2rem;
-    padding:1.5rem;
     margin:1rem auto;
     border-radius:7px;
 }
@@ -207,6 +207,14 @@ h2,h3{
     padding:0.3rem;
     text-align:right;
     margin:0 auto;
+}
+
+.cuenta-titulo{
+    border-radius: 7px 7px 0px 0px;
+    color:white;
+    padding:0.5rem;
+    background:#222;
+    width:100%;
 }
 
 #cuenta button{
@@ -575,9 +583,9 @@ footer{
         width:90%;
         height:10rem;
     }
-    
+
     #cuenta{
-        width:60%;
+        width:80%;
         font-size:1rem;
     }
 }
